@@ -90,6 +90,6 @@ public class Soldado {
 		return this.ColumActual;
 	}
 	public String ToString() {
-		return "Nombre: "+Nombre+"\tVida: "+VActual+"\tFila: "+(FilActual+1)+"\tColumna: "+(ColumActual+1);
+		return "Nombre: "+Nombre+"\tVida: "+VActual+" \tFila: "+(FilActual)+" \tColumna: "+(ColumActual);
 	}
 }

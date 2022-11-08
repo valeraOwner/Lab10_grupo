@@ -47,17 +47,17 @@ public class Ejercito {
 		}
 	}
 	public void FilColum2(Ejercito ejercito1) {
-		int Fila=0;
-		int Columna=0;
+		int Fila;
+		int Columna;
 		for(int i = 0; i < Cantidad.length; i++) {
-			Fila=(int)(Math.random()*9);
-			Columna=(int)(Math.random()*9);
+			Fila=(int)(Math.random()*10+1);
+			Columna=(int)(Math.random()*10+1);
 			int j1 = 0;
 			while(j1<i) {
 				if(this.Cantidad[j1].getFilActual()==Fila &&
 						this.Cantidad[j1].getColumActual()==Columna) {
-					Fila=(int)(Math.random()*9);
-					Columna=(int)(Math.random()*9);
+					Fila=(int)(Math.random()*10+1);
+					Columna=(int)(Math.random()*10+1);
 					j1=0;
 					break;
 				}
@@ -73,23 +73,45 @@ public class Ejercito {
 		}
 		for(int i = 0; i < ejercito1.Cantidad.length; i++) {
 			int j1 = 0;
-			while(j1<=i) {
-				if(ejercito1.Cantidad[j1].getFilActual()==Fila &&
-						ejercito1.Cantidad[j1].getColumActual()==Columna) {
-					Fila=(int)(Math.random()*9);
-					Columna=(int)(Math.random()*9);
-					j1=0;
-					break;
+			int ejer1=ejercito1.Cantidad.length;
+			int ejer2=Cantidad.length;
+			if(ejer1>ejer2) {
+				while(j1<=i&&i<ejer2) {
+					if(ejercito1.Cantidad[j1].getFilActual()==this.Cantidad[i].getFilActual() && 
+							ejercito1.Cantidad[j1].getColumActual()==this.Cantidad[i].getColumActual()) {
+						Fila=(int)(Math.random()*10+1);
+						Columna=(int)(Math.random()*10+1);
+						j1=0;
+						this.Cantidad[j1].setFilActual(Fila);
+						this.Cantidad[j1].setColumActual(Columna);
+						break;
+					}
+					else if(j1 == i-1 ) {
+						j1++;
+					}
+					else {
+						j1++;
+					}
 				}
-				else if(j1 == i-1 ) {
-					j1++;
-				}
-				else {
-					j1++;
+			}else {
+				while(j1<=i) {
+					if(ejercito1.Cantidad[j1].getFilActual()==this.Cantidad[i].getFilActual() &&
+							ejercito1.Cantidad[j1].getColumActual()==this.Cantidad[i].getColumActual()) {
+						Fila=(int)(Math.random()*10+1);
+						Columna=(int)(Math.random()*10+1);
+						j1=0;
+						this.Cantidad[i].setFilActual(Fila);
+						this.Cantidad[i].setColumActual(Columna);
+						break;
+					}
+					else if(j1 == i-1 ) {
+						j1++;
+					}
+					else {
+						j1++;
+					}
 				}
 			}
-			this.Cantidad[i].setFilActual(Fila);
-			this.Cantidad[i].setColumActual(Columna);
 		}
 	}
 	public void MostrarEjercito() {
