@@ -24,14 +24,14 @@ public class Ejercito {
 	}
 	public void FilColum1() {
 		for(int i = 0; i < Cantidad.length; i++) {
-			int Fila=(int)(Math.random()*9);
-			int Columna=(int)(Math.random()*9);
+			int Fila=(int)(Math.random()*10);
+			int Columna=(int)(Math.random()*10);
 			int j1 = 0;
 			while(j1<i) {
 				if(Cantidad[j1].getFilActual()==Fila &&
 						Cantidad[j1].getColumActual()==Columna) {
-					Fila=(int)(Math.random()*9);
-					Columna=(int)(Math.random()*9);
+					Fila=(int)(Math.random()*10);
+					Columna=(int)(Math.random()*10);
 					j1=0;
 					break;
 				}
@@ -50,14 +50,14 @@ public class Ejercito {
 		int Fila;
 		int Columna;
 		for(int i = 0; i < Cantidad.length; i++) {
-			Fila=(int)(Math.random()*10+1);
-			Columna=(int)(Math.random()*10+1);
+			Fila=(int)(Math.random()*10);
+			Columna=(int)(Math.random()*10);
 			int j1 = 0;
 			while(j1<i) {
 				if(this.Cantidad[j1].getFilActual()==Fila &&
 						this.Cantidad[j1].getColumActual()==Columna) {
 					Fila=(int)(Math.random()*10+1);
-					Columna=(int)(Math.random()*10+1);
+					Columna=(int)(Math.random()*10);
 					j1=0;
 					break;
 				}
@@ -79,8 +79,8 @@ public class Ejercito {
 				while(j1<=i&&i<ejer2) {
 					if(ejercito1.Cantidad[j1].getFilActual()==this.Cantidad[i].getFilActual() && 
 							ejercito1.Cantidad[j1].getColumActual()==this.Cantidad[i].getColumActual()) {
-						Fila=(int)(Math.random()*10+1);
-						Columna=(int)(Math.random()*10+1);
+						Fila=(int)(Math.random()*10);
+						Columna=(int)(Math.random()*10);
 						j1=0;
 						this.Cantidad[j1].setFilActual(Fila);
 						this.Cantidad[j1].setColumActual(Columna);
@@ -97,8 +97,8 @@ public class Ejercito {
 				while(j1<=i) {
 					if(ejercito1.Cantidad[j1].getFilActual()==this.Cantidad[i].getFilActual() &&
 							ejercito1.Cantidad[j1].getColumActual()==this.Cantidad[i].getColumActual()) {
-						Fila=(int)(Math.random()*10+1);
-						Columna=(int)(Math.random()*10+1);
+						Fila=(int)(Math.random()*10);
+						Columna=(int)(Math.random()*10);
 						j1=0;
 						this.Cantidad[i].setFilActual(Fila);
 						this.Cantidad[i].setColumActual(Columna);
@@ -124,24 +124,31 @@ public class Ejercito {
 		tabla = new String [10][11];
 		for(int i = 0; i<tabla.length; i++) {
 			for(int j = 0; j < tabla[i].length; j++) {
-				tabla[i][j] = "[ ]";
+				tabla[i][j] = "[     ]";
 				for(int k = 0; k<this.Cantidad.length; k++) {
-					if(i == Cantidad[k].getFilActual() && j ==
-							Cantidad[k].getColumActual()) {
-						tabla[i][j] = "[ (-_-) ]";
+					if(i == this.Cantidad[k].getFilActual() && j ==
+							this.Cantidad[k].getColumActual()) {
+						tabla[i][j] = "[(-_-)]";
 					}
 				}
 				for(int k = 0; k<ejercito2.Cantidad.length; k++) {
 					if(i == ejercito2.Cantidad[k].getFilActual() && j ==
 							ejercito2.Cantidad[k].getColumActual()) {
-						tabla[i][j] = "[ (°_°) ]";
+						tabla[i][j] = "[(°_°)]";
 					}
 				}
 			}
 		}
 	}
 	public void MostarTabla() {
+		System.out.println("\n");
 		for(int i = 0; i<tabla.length; i++) {
+			
+			if(i==9) {
+				System.out.print((i+1)+"  ");
+			}else {
+				System.out.print((i+1)+"   ");
+			}
 			for(int j = 0; j<tabla[i].length-1; j++) {
 				System.out.print(tabla[i][j]);
 			}
@@ -158,7 +165,7 @@ public class Ejercito {
 			}
 		}
 		System.out.println("Soldado con mayor Nivel de vida es: ");
-		System.out.println(Cantidad[indice]);
+		System.out.println(this.Cantidad[indice].ToString());
 	}
 	public void Promedio() {
 		int promedio=0;
