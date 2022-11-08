@@ -5,6 +5,7 @@
 - Jeanpier Michaelson Valera Yana
 - Manuel Mario Champi Sanchez
 - Gabriela Vanessa Martell Villanueva
+
 Fecha: 08-11-2022
 */
 package Lab10grupal;
