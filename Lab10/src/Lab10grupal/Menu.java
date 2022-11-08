@@ -1,3 +1,12 @@
+/*Laboratorio - 10
+ * 
+- Joe Daniel Flores Choquehuanca
+- Kristen Fernández Cardenas 
+- Jeanpier Michaelson Valera Yana
+- Manuel Mario Champi Sanchez
+- Gabriela Vanessa Martell Villanueva
+Fecha: 08-11-2022
+*/
 package Lab10grupal;
 
 import java.util.*;
