@@ -91,6 +91,6 @@ public class Soldado {
 	}
 	
 	public String ToString() {
-		return "Nombre: "+Nombre+"\tVida: "+VActual+" \tFila: "+(FilActual+1)+" \tColumna: "+(ColumActual+1)+" \tVelocidad: "+VActual;
+		return "Nombre: "+Nombre+"\tVida: "+VActual+" \tFila: "+(FilActual+1)+" \tColumna: "+(ColumActual+1)+" \tVelocidad: "+Velocidad;
 	}
 }
