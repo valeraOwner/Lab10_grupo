@@ -31,21 +31,21 @@ public class Soldado {
 		System.out.println("4.Abajo");
 		direccion = sc.nextInt();
 		if(direccion == 1) {
-			this.setColumActual(getColumActual()-1);
-		}
-		else if(direccion == 2) {
 			this.setColumActual(getColumActual()+1);
 		}
+		else if(direccion == 2) {
+			this.setColumActual(getColumActual()-1);
+		}
 		else if(direccion == 3) {
-			this.setFilActual(getFilActual()+1);
+			this.setFilActual(getFilActual()-1);
 		}
 		else if(direccion == 4) {
-			this.setFilActual(getFilActual()-1);
+			this.setFilActual(getFilActual()+1);
 		}
 		Velocidad++;
 	}
 	public void Defender() {
-		Velocidad = Velocidad;
+		Velocidad = 0;
 	}
 	public void avanzar() {
 		Velocidad++;
@@ -91,6 +91,6 @@ public class Soldado {
 	}
 	
 	public String ToString() {
-		return "Nombre: "+Nombre+"\tVida: "+VActual+" \tFila: "+(FilActual+1)+" \tColumna: "+(ColumActual+1);
+		return "Nombre: "+Nombre+"\tVida: "+VActual+" \tFila: "+(FilActual+1)+" \tColumna: "+(ColumActual+1)+" \tVelocidad: "+VActual;
 	}
 }

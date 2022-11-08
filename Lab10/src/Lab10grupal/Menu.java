@@ -42,8 +42,8 @@ public class Menu {
 			y = sc.nextInt();
 			if(accion == 1) {
 				for(int i =0; i< num1.Cantidad.length; i++) {
-					if(num1.Cantidad[i].getFilActual() == y &&
-							num1.Cantidad[i].getColumActual()== x) {
+					if(num1.Cantidad[i].getFilActual() == (y-1) &&
+							num1.Cantidad[i].getColumActual()== (x-1)) {
 						num1.Cantidad[i].Atacar();
 						num2.Cantidad[i].serAtacado();
 						break;
@@ -52,8 +52,8 @@ public class Menu {
 			}
 			else if(accion == 2) {
 				for(int i = 0; i < num1.Cantidad.length;i++) {
-					if(num1.Cantidad[i].getFilActual() == y &&
-							num1.Cantidad[i].getColumActual()== x) {
+					if(num1.Cantidad[i].getFilActual() == (y-1) &&
+							num1.Cantidad[i].getColumActual()== (x-1)) {
 						num1.Cantidad[i].Defender();
 						break;
 					}
@@ -61,8 +61,8 @@ public class Menu {
 			}
 			else if(accion == 3) {
 				for(int i = 0; i < num1.Cantidad.length;i++) {
-					if(num1.Cantidad[i].getFilActual() == y &&
-							num1.Cantidad[i].getColumActual()== x) {
+					if(num1.Cantidad[i].getFilActual() == (y-1) &&
+							num1.Cantidad[i].getColumActual()== (x-1)) {
 						num1.Cantidad[i].avanzar();
 						break;
 					}
@@ -70,8 +70,8 @@ public class Menu {
 			}
 			else if(accion == 4) {
 				for(int i = 0; i < num1.Cantidad.length;i++) {
-					if(num1.Cantidad[i].getFilActual() == y &&
-							num1.Cantidad[i].getColumActual()== x) {
+					if(num1.Cantidad[i].getFilActual() == (y-1) &&
+							num1.Cantidad[i].getColumActual()== (x-1)) {
 						num1.Cantidad[i].retroceder();
 						break;
 					}
@@ -79,13 +79,15 @@ public class Menu {
 			}
 			else if(accion == 5) {
 				for(int i = 0; i < num1.Cantidad.length;i++) {
-					if(num1.Cantidad[i].getFilActual() == y &&
-							num1.Cantidad[i].getColumActual()== x) {
+					if(num1.Cantidad[i].getFilActual() == (y-1) &&
+							num1.Cantidad[i].getColumActual()== (x-1)) {
 						num1.Cantidad[i].huir();
 						break;
 					}
 				}
 			}
+			num1.MostrarEjercito();
+			num2.MostrarEjercito();
 			num1.LlenarTabla(num2);
 			num1.MostarTabla();
 			System.out.println("Cambio de jugador");

@@ -115,12 +115,14 @@ public class Ejercito {
 		}
 	}
 	public void MostrarEjercito() {
+		
 		System.out.println("Ejercito "+Numero);
 		for (int i =0;i<Cantidad.length;i++) {
 			System.out.println(Cantidad[i].ToString());
 		}
 	}
 	public void LlenarTabla(Ejercito ejercito2) {
+		
 		tabla = new String [10][11];
 		for(int i = 0; i<tabla.length; i++) {
 			for(int j = 0; j < tabla[i].length; j++) {
@@ -128,13 +130,13 @@ public class Ejercito {
 				for(int k = 0; k<this.Cantidad.length; k++) {
 					if(i == this.Cantidad[k].getFilActual() && j ==
 							this.Cantidad[k].getColumActual()) {
-						tabla[i][j] = "[(-_-)]";
+						tabla[i][j] = "[Sold1]";
 					}
 				}
 				for(int k = 0; k<ejercito2.Cantidad.length; k++) {
 					if(i == ejercito2.Cantidad[k].getFilActual() && j ==
 							ejercito2.Cantidad[k].getColumActual()) {
-						tabla[i][j] = "[(°_°)]";
+						tabla[i][j] = "[Sold2]";
 					}
 				}
 			}
@@ -142,6 +144,8 @@ public class Ejercito {
 	}
 	public void MostarTabla() {
 		System.out.println("\n");
+		System.out.println("      1      2      3      4      5      6      7      8      9      10");
+		System.out.println("");
 		for(int i = 0; i<tabla.length; i++) {
 			
 			if(i==9) {
